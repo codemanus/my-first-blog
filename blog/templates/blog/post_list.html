@@ -10,11 +10,12 @@
                 <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                 <p class="card-text">{{ post.text|linebreaksbr }}</p>
                 <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                
             </div>
             <div class="card-footer text-muted">
                     Published: {{ post.published_date }}
                     <a href="#">Link</a>
-            </div>
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>            </div>
           </div>
           {% endfor %}
 {% endblock %}
